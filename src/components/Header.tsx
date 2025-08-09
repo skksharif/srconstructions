@@ -24,17 +24,17 @@ const Header = () => {
         isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16 sm:h-20">
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="flex items-center space-x-2"
         >
-          <div className="w-10 h-10 bg-white flex items-center justify-center">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white flex items-center justify-center flex-shrink-0">
             <img src="/logo.png" alt="SR Constructions Logo" className="w-full h-full object-contain" />
           </div>
           <span
-            className={`hidden md:block text-2xl font-bold ${
+            className={`hidden sm:block text-lg sm:text-xl lg:text-2xl font-bold ${
               isScrolled ? 'text-gray-800' : 'text-white'
             }`}
             style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -44,7 +44,7 @@ const Header = () => {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6 xl:space-x-8">
           {navItems.map((item, index) => (
             <motion.a
               key={item}
@@ -65,9 +65,9 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className={`md:hidden ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+          className={`md:hidden p-2 ${isScrolled ? 'text-gray-800' : 'text-white'} flex-shrink-0`}
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
         </div>
       </div>
@@ -80,12 +80,12 @@ const Header = () => {
           exit={{ opacity: 0, height: 0 }}
           className="md:hidden bg-white border-t"
         >
-          <div className="container mx-auto px-6 py-4">
+          <div className="container mx-auto px-4 sm:px-6 py-2">
             {navItems.map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block py-3 text-gray-800 hover:text-red-600 transition-colors border-b border-gray-100 last:border-b-0"
+                className="block py-3 px-2 text-gray-800 hover:text-red-600 transition-colors border-b border-gray-100 last:border-b-0 text-sm sm:text-base"
                 onClick={() => setIsMobileMenuOpen(false)}
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
