@@ -24,16 +24,17 @@ const Header = () => {
         isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="flex items-center justify-between container mx-auto px-6 py-4 flex items-center md:justify-around">
+      <div className="container mx-auto px-6 py-4">
+        <div className="flex items-center justify-between">
         <motion.div
           whileHover={{ scale: 1.05 }}
           className="flex items-center space-x-2"
         >
-          <div className="w-[50px] bg-white flex items-center justify-center">
-            <img src="/logo.png" className="text-white" />
+          <div className="w-10 h-10 bg-white flex items-center justify-center">
+            <img src="/logo.png" alt="SR Constructions Logo" className="w-full h-full object-contain" />
           </div>
           <span
-            className={`hidden md:text-2xl font-bold ${
+            className={`hidden md:block text-2xl font-bold ${
               isScrolled ? 'text-gray-800' : 'text-white'
             }`}
             style={{ fontFamily: 'Poppins, sans-serif' }}
@@ -43,7 +44,7 @@ const Header = () => {
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
           {navItems.map((item, index) => (
             <motion.a
               key={item}
@@ -68,6 +69,7 @@ const Header = () => {
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -83,7 +85,7 @@ const Header = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="block py-2 text-gray-800 hover:text-red-600 transition-colors"
+                className="block py-3 text-gray-800 hover:text-red-600 transition-colors border-b border-gray-100 last:border-b-0"
                 onClick={() => setIsMobileMenuOpen(false)}
                 style={{ fontFamily: 'Poppins, sans-serif' }}
               >
