@@ -24,7 +24,7 @@ const Header = () => {
         isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="w-full max-w-full mx-auto px-4 sm:px-6">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-6 overflow-hidden">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <motion.div
             whileHover={{ scale: 1.05 }}

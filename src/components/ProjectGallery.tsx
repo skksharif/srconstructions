@@ -45,16 +45,16 @@ const ProjectGallery = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-gray-800 relative">
+    <section id="projects" className="py-20 bg-gray-800 relative overflow-hidden">
       {/* Parallax Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-fixed opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-fixed opacity-20 w-full"
         style={{
           backgroundImage: `url('https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=1920')`,
         }}
       />
       
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-6 max-w-full">
         <AnimatedSection className="text-center mb-16">
           <h2 
             className="text-4xl md:text-5xl font-bold text-white mb-6"
